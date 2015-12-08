@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html class="no-js" ng-app="profileApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Profile</title>
+    <meta name="description" content="">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+
+   
+
+    <!-- ################################################################################################# -->
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:100,300,400,500" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animsition/3.5.2/css/animsition.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/sweetalert.css">
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.blue_grey-light_blue.min.css">  
+    <link rel="stylesheet" href="css/swipebox.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- ################################################################################################# -->
+
+  </head>
+  
+  <body>
+  
+    <div class="animsition">
+      <div class="mdl-layout mdl-js-layout mdl-layout--overlay-drawer-button">
+
+        <!-- ################################################################################################# -->
+        <!-- Sidebar -->
+      <div class="mdl-layout__drawer" ng-controller="profileCtrl">
+          <!-- Top -->
+          <div class="mdl-card mdl-shadow--2dp mdl-color--primary mdl-color-text--blue-grey-50 drawer-profile" >
+
+            <div class="mdl-card__title user">
+              <img src="img/user.jpg" alt="" /> <!-- Invoke Company Image-->
+              <span class="user-name">{{com_name}}</span> <!-- Invoke Company name-->
+              <span class="user-mail">{{com_email}}</span> <!-- Invoke Company email-->
+            </div>
+          </div>
+         
+
+         <!-- ################################################################################################# -->
+
+          <!-- Main Navigation -->
+          <nav class="mdl-navigation">
+            <a class="mdl-navigation__link animsition-link" href="smmeindex.html"><i class="material-icons">home</i><span>Home</span></a>
+  
+            <div class="mdl-collapse">
+                <a class="mdl-navigation__link mdl-collapse__button"><i class="material-icons">apps</i>
+                    <span>Profile Menu</span>
+                </a>
+                <a href="calendar.html" class="mdl-navigation__link mdl-collapse__button"><i class="material-icons">apps</i>
+                    <span>Customer View</span>
+                </a>
+                <div class="mdl-collapse__content-wrapper">
+                  <div class="mdl-collapse__content mdl-animation--default" style="margin-top: -156px;">
+                    <a class="mdl-navigation__link animsition-link" href="index.html">cLogout</a>
+                    <a class="mdl-navigation__link animsition-link" href="calender.html">Appointment</a>
+                    <a class="mdl-navigation__link animsition-link" href="schedule.html">Schedules</a>
+                  </div>
+                </div>
+            </div>
+          </nav>
+        </div>
+
+         <!-- ################################################################################################# -->
+
+
+     
+    <!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$->
+
+
+
+
+      <!--Page Content -->
+      <main class="mdl-layout__content mdl-color--white" > 
+
+       <!-- ################################################################################################# -->
+        <div class="profile-page" ng-controller="profileCtrl">  
+          <img src="img/5.jpg" alt=""> <!-- Company Image is Invoked Here ....-->
+
+          <div class="contact-info">
+            <h3>{{com_name}}</h3>  <!-- Company Name is Invoked Here ....-->
+          </div>
+        </div>
+      <!-- ################################################################################################# -->
+
+        <div class="contact-about">
+          <div class="mdl-card mdl-shadow--2dp">
+            
+            <div class="mdl-grid">
+              <div class="mdl-cell mdl-cell--4-col">
+                <a class="no-accent-color" href="#html"><i class="material-icons">call</i></a>
+                <span>Contact Employee</span>
+              </div>
+
+              <div class="mdl-cell mdl-cell--4-col">
+                <a class="no-accent-color" href="#html"><i class="material-icons">message</i></a>
+                <span>Appointments</span>
+              </div>
+
+              <div class="mdl-cell mdl-cell--4-col">
+                <a href="#html" ><i class="material-icons">favorite</i></a>
+                <span>Employee Ratings</span>
+              </div> 
+            </div>
+
+
+          <!-- ################################################################################################# -->
+
+          <div class="mdl-card mdl-shadow--2dp about" ng-controller="profileCtrl">
+            <h4>About Company</h4>
+            <p>{{com_description}}</p> <!-- Company Description is Invoked Here ....-->
+            <button  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+              Make Company Changes
+            </button>
+          </div>
+            
+          <!-- ################################################################################################# --> 
+
+    
+        <div class="mdl-card mdl-shadow--2dp about" ng-controller="profileCtrl">
+            <h4>Update Company Profile Here ...</h4>
+
+          <div class="account-data" > <!-- text fields -->
+
+             <div>
+
+                <form>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+                      <input class="mdl-textfield__input" type="text" ng-model="com_name" id="com_name" />
+                      <label class="mdl-textfield__label" for="com_name">Company Name</label>
+                    </div>
+
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+                      <input class="mdl-textfield__input" type="text" ng-model="com_contact" id="com_contact"/>
+                      <label class="mdl-textfield__label" for="com_contact">Contact number</label>
+                    </div>
+
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+                      <input class="mdl-textfield__input" type="text" ng-model="com_email" id="com_email" />
+                      <label class="mdl-textfield__label" for="com_email">Email Address</label>
+                    </div>
+
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+                      <input class="mdl-textfield__input" type="text" ng-model="com_ref_no" id="com_ref_no" />
+                      <label class="mdl-textfield__label" for="com_ref_no">Refence Number</label>
+                    </div>
+
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+                      <input class="mdl-textfield__input" type="text" ng-model="com_acc_no" id="com_acc_no" />
+                      <label class="mdl-textfield__label" for="com_acc_no">Account Number</label>
+                    </div>
+
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+                      <input class="mdl-textfield__input" type="text" ng-model="com_description" id="com_description" />
+                      <label class="mdl-textfield__label" for="com_description">Description</label>
+                    </div>
+
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-click="addCompanyProf()">
+                      Update
+                    </button>
+                </form>
+                
+              </div>
+              <a class="left" href="fileChoose.html">Upload Logo Click here...</a> 
+            </div>
+          
+            
+          </div>
+
+          <!-- ################################################################################################# -->
+
+          <div class="mdl-card mdl-shadow--2dp about">
+            <h4>About Services</h4>
+            <p>list of Service the Company Offers reflect here ...</p> <!-- Company Service Description is Invoked Here ....-->
+
+            <button ng-model="hideService" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+              Manage Service
+            </button>
+          <!-- <input type="checkbox" ng-model="hideService"> -->
+                 
+          </div>
+
+          <!-- ################################################################################################# -->
+
+          <div  class="mdl-card mdl-shadow--2dp about" ng-controller="profileCtrl">
+              <h4>List of Services</h4>
+                  <form action="">     
+                    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+                      <thead>
+                        <tr>
+                          <th class="mdl-data-table__cell--non-numeric">Services</th>
+                          <th>Field</th>
+                          <th>Category</th>
+                          <th>Avail-Time</th>
+                        </tr>
+                      </thead>
+                        <tbody>
+                          <tr ng-repeat="service in company.services">
+                            <td class="mdl-data-table__cell--non-numeric" value="serviceName">{{service.serv_name}}</td>
+                            <td class="mdl-data-table__cell--non-numeric" value="serviceName">{{service.field}}</td>
+                            <td class="mdl-data-table__cell--non-numeric" value="serviceName">{{service.category}}</td>
+                            <td value="avalTime">{{service.availTime}}</td>
+                          </tr>      
+                      </tbody>
+                  </table>
+                          
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-click="addService()">Add New Service </button>
+
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-click="deleteService()">Delete</button>
+
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-click="updateService()">Update</button>
+
+                  </form>
+              </div>
+              <!-- ################################################################################################# -->
+              <div ng-controller="fieldController">
+                <div class="mdl-card mdl-shadow--2dp about">
+                  <h4>Add New Services</h4>
+                         <div class="account-data"> <!-- text fields -->
+
+                          <form >
+                            
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+                              <input ng-model="serv_name" class="mdl-textfield__input" type="text" id="serv_name" />
+                              <label class="mdl-textfield__label" for="serv_name">Service Name</label><br>
+                            </div>
+
+                              <div >
+                                <label>Select Service Field</label>
+                                <select ng-model="field" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+                                  <option value="optemetrist">Optemetrist</option>
+                                  <option value="Medical Practitian">Medical Practitian</option>
+                                  <option value="Dietitian">Dietitian</option>
+                                </select>
+                              </div><br>
+                            <div >
+                              <label >Select Service Category</label>
+                              <select ng-model="category" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo" >
+                                <option value="Check-up">Check-up</option>
+                                <option value="Procedures">Procedures</option>
+                                <option value="General">General</option>
+                              </select>
+                            </div>
+
+                            <div >
+                             <label>Select Service Duration</label>
+                              <select ng-model="timeSelect" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+                                <option value="1">  1    -  Hour(s)</option>
+                                <option value="1.5">1:30 -  Hour(s)</option>
+                                <option value="2">  2    -  Hour(s)</option>
+                                <option value="2.5">2:30 -  Hour(s)</option>
+                                <option value="3">  3    -  Hour(s)</option>
+                                <option value="3.5">3:30 -  Hour(s)</option>
+                                <option value="4">  4    -  Hour(s)</option>
+                                <option value="4.5">4:30 -  Hour(s)</option>
+                                <option value="5">  5    -  Hour(s)</option>
+                              </select>
+                            </div><br>
+                           
+                              <div ng-controller="fieldController">
+                                 <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-click="addServ()"> Add</button>
+                              </div>
+                          </form>
+                      </div>
+                    </div>
+                 </div>
+
+              <!-- ################################################################################################# -->
+        </div>
+        </div>
+
+      </main>
+    </div>
+    </div>
+
+
+    <!-- ################################################################################################# -->
+    <!-- // <script src="js/jquery-2.1.4.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/3.5.2/js/jquery.animsition.js"></script>
+    <script src="js/sweetalert.min.js"></script> 
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.min.js"></script>
+    <script src="js/jquery.swipebox.min.js"></script>
+    <!-- // <script src="js/function.js"></script> -->
+
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/appFactories.js"></script>
+    <script type="text/javascript" src="js/appControllers.js"></script>
+</body>
+</html>

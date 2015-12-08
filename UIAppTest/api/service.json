@@ -1,0 +1,23 @@
+[
+	{
+		serv_name:'Zygon',
+	 	field:'Optemetrist',
+	 	category:'Check-ups',
+	 	availTime:'01:00 - 02:00 AM'
+	},
+
+	{
+		serv_name:'Phathologarism',
+		field:'Optemetrist',
+		category:'Procedures',
+		availTime:'12:00 - 01:00 AM'
+	},
+
+	{
+		serv_name:'Dygon',
+		field:'Optemetrist',
+		category:'Procedures',
+		availTime:'11:00 - 12:00 AM'
+	}
+
+]
